@@ -1,2 +1,7 @@
 # portal
-Starting point for a web application running in `auto`
+Reference application for running a web application in `auto`
+
+## Config
+
+## Databases
+

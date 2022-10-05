@@ -1,0 +1,7 @@
+name: portal
+desc: Reference Portal
+version: 0.0.1
+command: helm install
+command-args: --set ingress.enabled=true
+seed-command: seed_db.py
+init-command: init_db.py
