@@ -1,5 +1,5 @@
 # portal
-Reference application for running a web application in `auto`
+Reference application for running a web server in `auto`
 
 ## Config
 

@@ -1,3 +1,3 @@
-FROM hello-world
+FROM nginx:latest
 
-CMD ["./amd64/hello-world/hello"]
+CMD ["nginx", "-g", "daemon off;"]
