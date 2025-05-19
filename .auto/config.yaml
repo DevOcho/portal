@@ -7,9 +7,11 @@ version: 0.0.2
 # k8s/k3s commands
 command: helm install
 command-args: --set ingress.enabled=true
+
+# This is your other option
 # command: kubectl apply -f
 # command-args: '/path/to/yaml/files/*.yaml'
 
 # Database commands
-seed-command: seed_db.py
-init-command: init_db.py
+seed-command: seed_db.sh
+init-command: init_db.sh
