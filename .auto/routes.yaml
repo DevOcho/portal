@@ -1,0 +1,22 @@
+# How auto 0.9 and newer route traffic to portal: https://portal.local (and
+# http). auto applies this file after installing the chart and deletes it when
+# the pod stops. See https://devocho.github.io/auto/guides/routes/
+#
+# auto 0.8 and older never read this file and keep using the chart's Ingress
+# (`--set ingress.enabled=true` in config.yaml), so both stay until 0.8 is
+# gone.
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: portal
+  namespace: default
+spec:
+  parentRefs:
+  - name: auto            # auto's shared Gateway, the same in every cluster
+    namespace: auto-gateway
+  hostnames:
+  - portal.local
+  rules:
+  - backendRefs:
+    - name: portal        # the chart's Service (fullnameOverride: portal)
+      port: 80
